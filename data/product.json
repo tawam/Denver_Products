@@ -33,10 +33,22 @@
     "standard": "Equipamento conforme Norma IEC 60974"
   },
   "packageContents": [
-    {"item": "Fonte de Soldagem", "qty": 1},
-    {"item": "Porta Eletrodo", "qty": 1},
-    {"item": "Garra Negativa", "qty": 1},
-    {"item": "Manual", "qty": 1}
+    {
+      "item": "Fonte de Soldagem",
+      "qty": 1
+    },
+    {
+      "item": "Porta Eletrodo",
+      "qty": 1
+    },
+    {
+      "item": "Garra Negativa",
+      "qty": 1
+    },
+    {
+      "item": "Manual",
+      "qty": 1
+    }
   ],
   "packageTotal": 4,
   "manual": "MANUAL",
@@ -69,17 +81,57 @@
     "Aceita oscilações da rede elétrica"
   ],
   "technicalData": {
-    "columns": ["Campo", "MMA Eletrodo", "TIG Varetas"],
+    "columns": [
+      "Campo",
+      "MMA Eletrodo",
+      "TIG Varetas"
+    ],
     "rows": [
-      ["Processo de solda", "MMA Eletrodo", "TIG Varetas"],
-      ["Bitola", "1,0/ 2,0 / 2,5 mm", "1,0 / 2,0 / 2,5 mm"],
-      ["Especificação", "7018, 6013, inox, ferro fundido", "Aço Carbono, Inox, Bronze, Ferro fundido, Cobre e ligas ferrosas"],
-      ["Corrente máx. de entrada", "MMA127V-31,5A   MMA220V- 24A", "TIG127V-19,3A   TIG220V-15,3A"],
-      ["Número de fases", "Monofásica 1PH", "Monofásica 1PH"],
-      ["Faixa de regulagem", "MMA127V-20A/20,8 - 100A/24V   MMA220V-20A/20,8V - 120A/24,8V", "TIG127V-20A/10,8V - 100A/14V   TIG220V-20A/10,8V - 120A/14,8V"],
-      ["Configurações Avançadas", "ARC FORCE/ HOT STAR/ VRD/ ANTI STICK", "ARC FORCE/ HOT STAR/ VRD/ ANTI STICK"],
-      ["Ciclo de trabalho", "MMA127V-100% com 45A/21,8V   MMA220V-100% com 54A/22,1V", "TIG127V-100% com 45A/11,8V   TIG220V-100% com 54A/12,1V"],
-      ["Frequencia", "50/60HZ", "50/60HZ"]
+      [
+        "Processo de solda",
+        "MMA Eletrodo",
+        "TIG Varetas"
+      ],
+      [
+        "Bitola",
+        "1,0/ 2,0 / 2,5 mm",
+        "1,0 / 2,0 / 2,5 mm"
+      ],
+      [
+        "Especificação",
+        "7018, 6013, inox, ferro fundido",
+        "Aço Carbono, Inox, Bronze, Ferro fundido, Cobre e ligas ferrosas"
+      ],
+      [
+        "Corrente máx. de entrada",
+        "MMA127V-31,5A   MMA220V- 24A",
+        "TIG127V-19,3A   TIG220V-15,3A"
+      ],
+      [
+        "Número de fases",
+        "Monofásica 1PH",
+        "Monofásica 1PH"
+      ],
+      [
+        "Faixa de regulagem",
+        "MMA127V-20A/20,8 - 100A/24V   MMA220V-20A/20,8V - 120A/24,8V",
+        "TIG127V-20A/10,8V - 100A/14V   TIG220V-20A/10,8V - 120A/14,8V"
+      ],
+      [
+        "Configurações Avançadas",
+        "ARC FORCE/ HOT STAR/ VRD/ ANTI STICK",
+        "ARC FORCE/ HOT STAR/ VRD/ ANTI STICK"
+      ],
+      [
+        "Ciclo de trabalho",
+        "MMA127V-100% com 45A/21,8V   MMA220V-100% com 54A/22,1V",
+        "TIG127V-100% com 45A/11,8V   TIG220V-100% com 54A/12,1V"
+      ],
+      [
+        "Frequencia",
+        "50/60HZ",
+        "50/60HZ"
+      ]
     ]
   },
   "relatedLines": [
@@ -91,6 +143,61 @@
   "contact": {
     "headline": "FALE CONOSCO",
     "phones": "(31) 3441-4688 / (19) 3832-5444",
-    "website": "www.denversoldas.com.br"
+    "website": "www.denversoldas.com.br",
+    "offices": [
+      {
+        "title": "Escritório e Centro de Distribuição",
+        "lines": [
+          "CNPJ: 22.671.564/0002-70",
+          "Rua Cardeal Arco Verde, 1240",
+          "Água Branca - Contagem/MG",
+          "CEP: 32.371-000"
+        ]
+      },
+      {
+        "title": "Fábrica Minas Gerais",
+        "lines": [
+          "CNPJ: 22.671.564/0001-99",
+          "Av. Governador Magalhães Pinto, 3433",
+          "Planalto - Montes Claros/MG",
+          "CEP: 39.404-166"
+        ]
+      },
+      {
+        "title": "Fábrica São Paulo",
+        "lines": [
+          "CNPJ: 22.671.564/0004-31",
+          "Rua José Elpídio de Oliveira, 711A",
+          "Jardim Cidade Nova - Sumaré/SP",
+          "CEP: 13.178-312"
+        ]
+      }
+    ]
+  },
+  "schemaVersion": 1,
+  "assets": {
+    "hero": {
+      "src": "assets/mma120-hero.webp",
+      "alt": "Denver MMA 120 em perspectiva, com painel frontal e lateral visíveis",
+      "width": 1672,
+      "height": 941,
+      "transparent": false
+    },
+    "kit": {
+      "src": "assets/mma120-kit.webp",
+      "alt": "Porta Eletrodo, Garra Negativa e Manual da MMA 120",
+      "width": 1800,
+      "height": 1200
+    },
+    "context": {
+      "src": "assets/mma120-context.webp",
+      "alt": "Detalhe do painel da Denver MMA 120 em uma oficina",
+      "width": 1376,
+      "height": 768
+    }
+  },
+  "documents": {
+    "brochure": "https://drive.google.com/file/d/18Pd_YbbRgwEPkfTxS5GqbbGl77I6-EpO/view?usp=sharing",
+    "manual": "https://drive.google.com/file/d/158XW1KlZ5t-jf2QYHQ4wPqcphIHN6IgS/view?usp=sharing"
   }
 }
