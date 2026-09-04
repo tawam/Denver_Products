@@ -194,7 +194,58 @@
       "alt": "Detalhe do painel da Denver MMA 120 em uma oficina",
       "width": 1376,
       "height": 768
-    }
+    },
+    "gallery": [
+      {
+        "src": "assets/mma120-kit-professional.webp",
+        "alt": "Acessórios incluídos com a Denver MMA 120 em estúdio",
+        "width": 1536,
+        "height": 1024,
+        "label": "Acessórios"
+      },
+      {
+        "src": "assets/mma120-view-front.webp",
+        "alt": "Denver MMA 120 vista frontal",
+        "width": 1536,
+        "height": 1024,
+        "label": "Frente"
+      },
+      {
+        "src": "assets/mma120-view-rear.webp",
+        "alt": "Denver MMA 120 vista traseira",
+        "width": 1536,
+        "height": 1024,
+        "label": "Traseira"
+      },
+      {
+        "src": "assets/mma120-view-top.webp",
+        "alt": "Denver MMA 120 vista superior",
+        "width": 1536,
+        "height": 1024,
+        "label": "Superior"
+      },
+      {
+        "src": "assets/mma120-view-three-quarter.webp",
+        "alt": "Denver MMA 120 vista três-quartos",
+        "width": 1536,
+        "height": 1024,
+        "label": "Três-quartos"
+      },
+      {
+        "src": "assets/mma120-view-kit.webp",
+        "alt": "Denver MMA 120 com cabos e acessórios",
+        "width": 1536,
+        "height": 1024,
+        "label": "Com cabos"
+      },
+      {
+        "src": "assets/mma120-view-side.webp",
+        "alt": "Denver MMA 120 vista lateral",
+        "width": 1536,
+        "height": 1024,
+        "label": "Lateral"
+      }
+    ]
   },
   "documents": {
     "brochure": "https://drive.google.com/file/d/18Pd_YbbRgwEPkfTxS5GqbbGl77I6-EpO/view?usp=sharing",

@@ -9,6 +9,7 @@ Página estática baseada no folheto MMA 120, com dados separados do layout. O H
 - `scripts/generate.mjs`: composição dos blocos, escape de conteúdo e geração dos dois HTMLs.
 - `styles.css`: tokens, layout, responsividade, teclado e impressão.
 - `assets/fonts/`: Anton, Raleway e Rubik, hospedadas localmente.
+- `gallery.js`: carrossel leve das vistas, com clique, teclado e estado acessível.
 - `index.html`: página gerada para publicar junto com os assets.
 - `standalone.html`: a mesma página com fontes e imagens incorporadas.
 
@@ -56,4 +57,5 @@ Famílias confirmadas no CSS institucional em 04/09/2026: Anton (principal), Ral
 - O manual usa o link “Manual - MMA120” encontrado na página de destino do QR code original.
 - Hero: foi preservada a imagem aprovada, com máscara e composição CSS para integrar seu fundo ao off-white. A tentativa de gerar alpha real falhou; esta versão não deve ser descrita como imagem recortada transparente. A sombra original permanece, sem sombra CSS duplicada.
 - Imagens de referência anteriores permanecem em `assets/`; a página usa apenas os assets declarados no JSON.
+- A seção de embalagem usa `assets.gallery`: acessórios como primeira imagem e seis vistas do equipamento nos thumbnails. Para incluir outra vista, adicione um objeto com `src`, `alt`, `width`, `height` e `label` ao array; o layout se adapta automaticamente.
 - As outras linhas aparecem como lista, sem falsos links nem caixas com “ASSET”. Novas fotos podem ser integradas quando fornecidas.

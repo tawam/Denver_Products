@@ -21,7 +21,10 @@ const heading = (id, title) => `<div class="section-head"><h2 id="${id}">${escap
 for (const key of ['identity', 'hero', 'packageContents', 'keyPoints', 'applications', 'technicalData', 'assets']) {
   if (!product[key]) throw new Error(`Campo obrigatório ausente: ${key}`);
 }
-for (const asset of Object.values(product.assets)) await access(resolve(root, asset.src));
+if (!Array.isArray(product.assets.gallery) || product.assets.gallery.length < 2) {
+  throw new Error('A galeria precisa de pelo menos duas vistas.');
+}
+for (const asset of [product.assets.hero, product.assets.kit, product.assets.context, ...product.assets.gallery]) await access(resolve(root, asset.src));
 if (product.packageContents.reduce((sum, item) => sum + item.qty, 0) !== product.packageTotal) {
   throw new Error('O total de itens não confere com o conteúdo da embalagem.');
 }
@@ -42,7 +45,10 @@ const sections = {
   </section>`,
   package: `<section class="shell section" id="conteudo" aria-labelledby="package-title">
     ${heading('package-title', 'Conteúdo da embalagem')}
-    <div class="package-grid"><figure class="kit-image">${image(product.assets.kit)}</figure><div>
+    <div class="package-grid"><div class="product-gallery">
+      <figure class="gallery-stage">${image(product.assets.gallery[0], true).replace('<img ', '<img data-gallery-image ')} </figure>
+      <div class="gallery-thumbs" role="tablist" aria-label="Vistas do produto">${product.assets.gallery.map((asset, i) => `<button class="gallery-thumb${i === 0 ? ' is-selected' : ''}" type="button" role="tab" aria-selected="${i === 0}" aria-label="${escape(asset.label)}" data-gallery-src="${safeUrl(asset.src)}" data-gallery-alt="${escape(asset.alt)}" data-gallery-width="${asset.width}" data-gallery-height="${asset.height}"><img src="${safeUrl(asset.src)}" alt="" width="${asset.width}" height="${asset.height}" loading="lazy" decoding="async"></button>`).join('\n')}</div>
+    </div><div>
       <ol class="package-list">${product.packageContents.map((item, i) => `<li><span class="item-number" aria-hidden="true">${String(i + 1).padStart(2, '0')}</span><span>${escape(item.item)}</span><span class="quantity"><span class="sr-only">Quantidade: </span>${item.qty}</span></li>`).join('\n')}</ol>
       <p class="package-total">Total de Itens: <strong>${product.packageTotal}</strong></p>
       ${product.documents.manual ? `<a class="text-link" href="${safeUrl(product.documents.manual)}">Manual <span aria-hidden="true">↗</span></a>` : ''}
@@ -93,5 +99,6 @@ let standalone = html.replace('<link rel="stylesheet" href="assets/fonts/fonts.c
 for (const [match, attr, path] of standalone.matchAll(/(src|href)="(assets\/[^"#]+)"/g)) {
   standalone = standalone.replace(match, `${attr}="${await dataUrl(path)}"`);
 }
+standalone = standalone.replace('<script src="gallery.js" defer></script>', `<script>${await read('gallery.js')}</script>`);
 await writeFile(resolve(root, 'standalone.html'), standalone);
 console.log('Generated index.html and standalone.html from data/product.json.');

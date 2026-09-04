@@ -8,10 +8,10 @@ const html = await read('index.html');
 const standalone = await read('standalone.html');
 const product = JSON.parse(await read('data/product.json'));
 const body = (source) => source.match(/<body>([\s\S]*)<\/body>/)[1];
-const text = (source) => body(source).replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
+const text = (source) => body(source).replace(/<script[\s\S]*?<\/script>/gi, '').replace(/<style[\s\S]*?<\/style>/gi, '').replace(/<[^>]*>/g, ' ').replace(/\s+/g, ' ').trim();
 assert.equal(text(html), text(standalone), 'As duas páginas devem ter o mesmo conteúdo.');
 assert.equal((html.match(/<h1\b/g) || []).length, 1, 'Uma única identificação principal.');
-assert(!/<script\b/.test(html), 'O conteúdo público não deve depender de JavaScript.');
+assert((html.match(/<script\b/g) || []).length === 1 && html.includes('gallery.js'), 'A página deve usar apenas o script essencial da galeria.');
 assert(!/MASTER PAGE|informação do folheto|sem ruído visual|\bASSET\b/.test(html), 'Texto interno visível.');
 for (const [attribute, path] of [...html.matchAll(/(?:src|href)="([^"#]+)"/g)].map((match) => [match[0], match[1]])) {
   if (!/^(https?:|tel:)/.test(path)) await access(new URL(path, root));
