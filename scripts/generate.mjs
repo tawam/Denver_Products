@@ -16,6 +16,8 @@ const image = (asset, priority = false) => `<img src="${safeUrl(asset.src)}" alt
 const lines = (value) => String(value).split(/ {2,}/).map(escape).join('<br>');
 const sentenceCase = (text) => text.charAt(0).toUpperCase() + text.slice(1).toLowerCase();
 const list = (items) => items.map((item) => `<li>${escape(item)}</li>`).join('\n');
+const relatedHref = 'https://denversoldas.com.br/produtos/#produtos';
+const relatedList = (items) => items.map((item) => `<li><a class="related-link" href="${relatedHref}"><span>${escape(item)}</span><span class="related-arrow" aria-hidden="true">↗</span></a></li>`).join('\n');
 const heading = (id, title) => `<div class="section-head"><h2 id="${id}">${escape(title)}</h2></div>`;
 
 for (const key of ['identity', 'hero', 'packageContents', 'keyPoints', 'applications', 'technicalData', 'assets']) {
@@ -74,7 +76,7 @@ const sections = {
     ${product.technicalData.rows.map(([label, mma, tig]) => `<tr><th scope="row">${escape(label)}</th>${label === 'Configurações Avançadas' && mma === tig ? `<td colspan="2">${lines(mma)}</td>` : `<td>${lines(mma)}</td><td>${lines(tig)}</td>`}</tr>`).join('\n')}
     </tbody></table></div>
   </div></section>`,
-  related: `<section class="shell section" aria-labelledby="related-title">${heading('related-title', 'Conheça as outras linhas de produtos Denver')}<ul class="related-list">${list(product.relatedLines)}</ul></section>`,
+  related: `<section class="shell section" aria-labelledby="related-title">${heading('related-title', 'Conheça as outras linhas de produtos Denver')}<ul class="related-list">${relatedList(product.relatedLines)}</ul></section>`,
 };
 const footer = `<footer id="contato"><div class="shell">
   <div class="footer-top"><a href="https://${escape(product.contact.website)}" aria-label="Denver Soldas — página inicial"><img class="brand-image" src="assets/denver-mark-dark.svg" alt="Denver Soldas" width="164" height="76" loading="lazy"></a><div><h2>${escape(product.contact.headline)}</h2><div class="phones">${product.contact.phones.split(' / ').map((phone) => `<a href="tel:+55${phone.replace(/\D/g, '')}">${escape(phone)}</a>`).join('')}</div></div></div>

@@ -108,6 +108,9 @@ td + td { border-left: 1px solid #eeece7; }
 tbody tr:last-child > * { border-bottom: 0; }
 .related-list { list-style: none; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(4,1fr); gap: 1.5rem; }
 .related-list li { border-top: 1px solid var(--line); padding-top: 1.4rem; font-family: var(--font-heading); font-weight: 600; font-size: 1.125rem; }
+.related-link { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; min-height: 2.5rem; }
+.related-link:hover { text-decoration-thickness: 2px; }
+.related-arrow { color: var(--orange); font-family: var(--font-body); font-size: 1rem; font-weight: 500; }
 footer { background: #141414; color: #fff; padding-block: 4rem 2rem; }
 .footer-top { display: flex; justify-content: space-between; align-items: start; gap: 2rem; padding-bottom: 3rem; }
 .footer-top .brand-image { width: 180px; }
