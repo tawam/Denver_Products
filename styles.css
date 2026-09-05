@@ -58,8 +58,8 @@ nav a { padding-block: .75rem; white-space: nowrap; }
 .compliance p + p { border-left: 1px solid #404040; }
 .package-grid { display: grid; grid-template-columns: 1.1fr 1fr; gap: clamp(2rem, 7vw, 6rem); align-items: center; }
 .product-gallery { min-width: 0; }
-.gallery-stage { display: grid; place-items: center; min-height: clamp(24rem, 42vw, 39rem); overflow: hidden; border-radius: 1.5rem; background: #eeede8; }
-.gallery-stage img { width: 100%; height: 100%; max-height: 39rem; object-fit: cover; }
+.gallery-stage { display: grid; place-items: center; aspect-ratio: 3 / 2; min-height: 0; overflow: hidden; border-radius: 1.5rem; background: #eeede8; }
+.gallery-stage img { width: 100%; height: 100%; max-height: none; padding: clamp(.75rem, 2vw, 1.75rem); box-sizing: border-box; object-fit: contain; }
 .gallery-thumbs { display: grid; grid-template-columns: repeat(7, 1fr); gap: .65rem; margin-top: .85rem; }
 .gallery-thumb { display: grid; place-items: center; aspect-ratio: 1; min-width: 0; padding: .2rem; border: 1px solid transparent; border-radius: .75rem; background: #eeede8; cursor: pointer; transition: border-color .2s ease, transform .2s ease, background-color .2s ease; }
 .gallery-thumb:hover { border-color: #aaa69f; transform: translateY(-2px); }
@@ -95,6 +95,9 @@ nav a { padding-block: .75rem; white-space: nowrap; }
 .accent-card li { border-color: rgba(20,20,20,.25); }
 .technical { background: #fff; }
 .with-action { display: flex; align-items: end; justify-content: space-between; gap: 1.5rem; max-width: none; }
+.technical-head { max-width: none; }
+.brochure-link { gap: .65rem; margin-top: .8rem; }
+.brochure-icon { width: 1.15rem; height: 1.15rem; color: var(--orange); flex: 0 0 auto; }
 .table-scroll { overflow-x: auto; border: 1px solid var(--line); border-radius: 1.2rem; }
 table { border-collapse: collapse; width: 100%; min-width: 820px; font-size: .9375rem; line-height: 1.65; }
 th, td { text-align: left; vertical-align: top; padding: 1.25rem 1.5rem; border-bottom: 1px solid var(--line); }
@@ -151,7 +154,7 @@ address p { font-size: .875rem; line-height: 1.8; color: #bbb; }
   .compliance p { padding: 1rem 0; }
   .compliance p + p { border-left: 0; border-top: 1px solid #404040; }
   .package-grid { gap: 2rem; }
-  .gallery-stage { min-height: auto; aspect-ratio: 1.5; }
+  .gallery-stage { aspect-ratio: 3 / 2; }
   .gallery-thumbs { gap: .45rem; }
   .application { min-height: 9rem; }
   .info-card { display: block; }

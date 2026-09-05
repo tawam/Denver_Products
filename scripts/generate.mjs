@@ -69,7 +69,7 @@ const sections = {
     ${[['Características', 'characteristics'], ['Vantagens', 'advantages'], ['Benefícios', 'benefits']].map(([title, key], i) => `<article class="info-card${i === 2 ? ' accent-card' : ''}"><h2>${title}</h2><ul>${list(product[key])}</ul></article>`).join('\n')}
   </div></section>`,
   technical: `<section class="technical section" id="dados-tecnicos" aria-labelledby="tech-title"><div class="shell">
-    <div class="section-head with-action"><h2 id="tech-title">Dados Técnicos</h2><a class="text-link" href="${safeUrl(product.documents.brochure)}">Folheto do produto <span aria-hidden="true">↓</span></a></div>
+    <div class="section-head technical-head"><h2 id="tech-title">Dados Técnicos</h2><a class="text-link brochure-link" href="${safeUrl(product.documents.brochure)}"><svg class="brochure-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6 3.75h8.25L19 8.5v11.75H6z"/><path d="M14 3.75V9h5M9 13h7M9 16h5"/></svg><span>Folheto do produto</span><span aria-hidden="true">↗</span></a></div>
     <div class="table-scroll" role="region" aria-labelledby="tech-title" tabindex="0"><table><caption class="sr-only">Dados Técnicos — ${escape(product.identity.name)}</caption><thead><tr>${product.technicalData.columns.map((cell) => `<th scope="col">${escape(cell)}</th>`).join('')}</tr></thead><tbody>
     ${product.technicalData.rows.map(([label, mma, tig]) => `<tr><th scope="row">${escape(label)}</th>${label === 'Configurações Avançadas' && mma === tig ? `<td colspan="2">${lines(mma)}</td>` : `<td>${lines(mma)}</td><td>${lines(tig)}</td>`}</tr>`).join('\n')}
     </tbody></table></div>
